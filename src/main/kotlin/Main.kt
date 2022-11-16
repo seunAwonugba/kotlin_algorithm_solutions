@@ -1,6 +1,6 @@
 fun main() {
     val arrayList = listOf(
-        5, 1, -5, 2, 10, -4, 15, 30, 11, 35, 11, -54, 22, 10 -50, 21, -15, 12, 20, -14, 25, 85, 71, -35, 12, 100, 31, 13
+        5, 1, -5, 0, 2, 10, -4, 15, 30, 11, 35, 11, -54, 22, 10, 0 -50, 21, -15, 12, 20, -14, 25, 85, 71, 0, -35, 12, 100, 31, 13
     )
     //find a value from a list
 
@@ -72,4 +72,46 @@ fun main() {
     }
 
     println(optimisedCheckNumberExist( num = 111, arr = arrayList))
+
+
+
+
+    fun sumOfANumberFromRange(n : Int) : Int{
+        var result = 0
+        for (i in 1..n){
+            result += i
+        }
+        return result
+    }
+
+    println(sumOfANumberFromRange(10000))
+
+    //hackerrank algorithm
+    //plus minus
+    fun plusMinus(arr : List<Int>){
+        val arrSize = (arr.size).toFloat()
+        var positive = 0f
+        var negative = 0f
+        var zero = 0f
+        for (i in arr){
+            when {
+                0 < i -> {
+                    positive++
+                }
+                0 > i -> {
+                    negative++
+                }
+                else -> {
+                    zero++
+                }
+
+            }
+        }
+        println("%.6f".format(positive/arrSize))
+        println("%.6f".format(negative/arrSize))
+        println("%.6f".format(zero/arrSize))
+
+    }
+
+    plusMinus(arrayList)
 }
