@@ -354,16 +354,43 @@ fun main() {
 
         val sortedMap = returnedMap.toSortedMap()
 
-
-
-
-
-
         return sortedMap.maxBy { it.value }.key
 
     }
 
     println(migratoryBirds(arr = arrayOf(1,1,2,2,3)))
+
+    fun salesByMatch(arr : Array<Int>) : Int{
+        var table = hashMapOf<Int, Int>()
+        var value = 0
+
+        for (i in arr){
+            if (table.keys.contains(i)){
+                table.merge(i, 1, Int::plus)
+            }else{
+                table.put(i,1)
+            }
+        }
+        println(table)
+
+        for (i in table.values){
+            when{
+                i >= 2 -> {
+                    if (i%2 == 0){
+                        value += (i/2)
+                    }else{
+                        value+= (i/2)
+                    }
+                }
+
+            }
+        }
+
+        return value
+
+    }
+
+    println(salesByMatch(arr = arrayOf(1,2,1,2,1,3,2)))
 
 
 
