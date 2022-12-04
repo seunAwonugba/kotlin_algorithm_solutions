@@ -1,3 +1,5 @@
+import kotlin.math.roundToInt
+
 fun main() {
     val arrayList = listOf(
         5, 1, -5, 0, 2, 10, -4, 15, 30, 11, 35, 11, -54, 22, 10, 0, -50, 21, -15, 12, 20, -14, 25, 85, 71, 0, -35, 12, 100, 31, 13
@@ -391,6 +393,14 @@ fun main() {
     }
 
     println(salesByMatch(arr = arrayOf(1,2,1,2,1,3,2)))
+
+    fun pageCount(n : Int, p :Int) : Int{
+        val front = p/2
+        val back = (n/2)-front
+        return minOf(front,back)
+    }
+
+    println(pageCount(5,3))
 
 
 
