@@ -1,4 +1,4 @@
-import kotlin.math.roundToInt
+import kotlin.math.abs
 
 fun main() {
     val arrayList = listOf(
@@ -401,6 +401,68 @@ fun main() {
     }
 
     println(pageCount(5,3))
+
+    fun countingValleys(steps: Int, path: String): Int {
+        var att = 0
+        var down = 0
+        for (i in 0..path.length-1){
+            if (path[i] == "U".single()){
+                if (att==-1){
+                    down++
+                }
+                att++
+            }else {
+                att--
+            }
+
+        }
+        return down
+//        for (i in 0..path.length - 1) {
+//            if (hashMap.keys.contains(path[i])) {
+//                hashMap.merge(path[i], 1, Int::plus)
+//            } else {
+//                hashMap.put(path[i], 1)
+//            }
+//        }
+//
+//        val difference =(hashMap.getValue("U".single()) - hashMap.getValue("D".single()))
+//
+//
+//        return if (difference == 0){
+//            1
+//        }else if (difference < 0){
+//            difference +2
+//        }else{
+//            difference+1
+//        }
+
+
+    }
+    println(countingValleys(8,"DDUUDDUDUUUD"))
+
+
+    fun electronicsShop(keyboards: Array<Int>, drives: Array<Int>, b: Int) : Int{
+        val maxArray = mutableListOf<Int>()
+        for (i in keyboards){
+            for (j in drives){
+                if (i + j <= b){
+                    val addi = i + j
+                    maxArray.add(addi)
+                }
+            }
+        }
+        return if (maxArray.isNotEmpty()){
+            maxArray.max()
+        }else{
+            -1
+        }
+
+
+
+
+    }
+
+    println(electronicsShop(arrayOf(40,50,60), arrayOf(5,8,12), 60))
 
 
 
